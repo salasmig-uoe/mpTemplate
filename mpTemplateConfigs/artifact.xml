@@ -11,4 +11,7 @@
     <artifact name="SalesOrderErrorSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/SalesOrderErrorSequence.xml</file>
     </artifact>
+    <artifact name="SalesOrderJMS" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/SalesOrderJMS.xml</file>
+    </artifact>
 </artifacts>
