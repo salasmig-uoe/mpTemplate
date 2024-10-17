@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>sales-rabbitmq-inbound</artifactId>
+  <artifactId>mpTemplate</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>sales-rabbitmq-inbound</name>
-  <description>sales-rabbitmq-inbound</description>
+  <name>mpTemplate</name>
+  <description>mpTemplate</description>
   <modules>
-    <module>sales-rabbitmq-inboundConfigs</module>
-    <module>sales-rabbitmq-inboundCompositeExporter</module>
+    <module>mpTemplateConfigs</module>
+    <module>mpTemplateCompositeExporter</module>
   </modules>
   <scm>
     <connection>scm:git:https://github.com/username/repository.git</connection>

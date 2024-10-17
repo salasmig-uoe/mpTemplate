@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SalesOrderErrorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom"/>
+    <property name="LOG-MP-TEMPLATE" scope="default" type="STRING" value="there was an error in processing the sales sequence"/>
+</sequence>

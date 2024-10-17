@@ -4,20 +4,21 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.example</groupId>
-    <artifactId>sales-rabbitmq-inbound</artifactId>
+    <artifactId>mpTemplate</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>sales-rabbitmq-inboundCompositeExporter</artifactId>
+  <artifactId>mpTemplateCompositeExporter</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>carbon/application</packaging>
-  <name>sales-rabbitmq-inboundCompositeExporter</name>
-  <description>sales-rabbitmq-inboundCompositeExporter</description>
+  <name>mpTemplateCompositeExporter</name>
+  <description>mpTemplateCompositeExporter</description>
   <properties>
     <com.example.endpoint_._SalesOrderQueueEP>capp/EnterpriseServiceBus</com.example.endpoint_._SalesOrderQueueEP>
     <com.example.inbound-endpoint_._SalesOrderInbooundEP>capp/EnterpriseServiceBus</com.example.inbound-endpoint_._SalesOrderInbooundEP>
-    <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
+    <artifact.types>synapse/priority-executor=xml,jaggery/app=zip,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,service/meta=xml,event/stream=json,datasource/datasource=xml,synapse/proxy-service=xml,synapse/sequence=xml,bpel/workflow=zip,synapse/endpointTemplate=xml,carbon/application=car,synapse/api=xml,wso2/gadget=dar,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,synapse/local-entry=xml,synapse/task=xml,event/publisher=xml,synapse/configuration=xml,webapp/jaxws=war,registry/resource=zip,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <com.example.sequence_._SalesOrderSequence>capp/EnterpriseServiceBus</com.example.sequence_._SalesOrderSequence>
+    <com.example.sequence_._SalesOrderErrorSequence>capp/EnterpriseServiceBus</com.example.sequence_._SalesOrderErrorSequence>
   </properties>
   <dependencies>
     <dependency>
@@ -35,6 +36,12 @@
     <dependency>
       <groupId>com.example.sequence</groupId>
       <artifactId>SalesOrderSequence</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>SalesOrderErrorSequence</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -92,7 +99,7 @@
       <plugin>
         <groupId>org.wso2.maven</groupId>
         <artifactId>maven-car-plugin</artifactId>
-        <version>5.2.34</version>
+        <version>5.2.42</version>
         <extensions>true</extensions>
         <executions>
           <execution>
@@ -115,7 +122,7 @@
       <plugin>
         <groupId>org.wso2.maven</groupId>
         <artifactId>maven-car-deploy-plugin</artifactId>
-        <version>1.1.1</version>
+        <version>5.2.42</version>
         <extensions>true</extensions>
         <dependencies>
           <dependency>
