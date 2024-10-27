@@ -4,7 +4,7 @@
         <parameter name="interval">1000</parameter>
         <parameter name="sequential">true</parameter>
         <parameter name="coordination">true</parameter>
-        <parameter name="transport.jms.Destination">ArchibusStock_AFM_Changes_Failed_MQ</parameter>
+        <parameter name="transport.jms.Destination">queue-1</parameter>
         <parameter name="transport.jms.CacheLevel">1</parameter>
         <parameter name="transport.jms.ConnectionFactoryJNDIName">QueueConnectionFactory</parameter>
         <parameter name="java.naming.factory.initial">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
